@@ -1,0 +1,298 @@
+/* VoiceInput.css */
+
+.voice-input-container {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .voice-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  }
+  
+  .voice-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+  }
+  
+  .voice-button:active {
+    transform: translateY(0);
+  }
+  
+  .mic-icon {
+    font-size: 24px;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  
+  /* Recording Panel */
+  .recording-panel {
+    background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .recording-header {
+    margin-bottom: 20px;
+  }
+  
+  .recording-indicator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .rec-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ef4444;
+  }
+  
+  .rec-dot.active {
+    animation: blink 1s infinite;
+  }
+  
+  .rec-dot.paused {
+    background: #f59e0b;
+    animation: none;
+  }
+  
+  @keyframes blink {
+    0%, 50%, 100% {
+      opacity: 1;
+    }
+    25%, 75% {
+      opacity: 0.3;
+    }
+  }
+  
+  .rec-text {
+    font-weight: 600;
+    color: #1f2937;
+  }
+  
+  .rec-time {
+    margin-left: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: #667eea;
+  }
+  
+  /* Audio Visualizer */
+  .audio-visualizer {
+    margin: 20px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .audio-level-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: width 0.1s ease;
+    border-radius: 12px 0 0 12px;
+  }
+  
+  .audio-waveform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    height: 80px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .wave-bar {
+    width: 4px;
+    background: white;
+    border-radius: 4px;
+    transition: height 0.1s ease;
+    animation: wave 0.8s ease-in-out infinite;
+  }
+  
+  @keyframes wave {
+    0%, 100% {
+      height: 20%;
+    }
+    50% {
+      height: 80%;
+    }
+  }
+  
+  /* Transcript Display */
+  .transcript-display {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 120px;
+    max-height: 200px;
+    overflow-y: auto;
+    margin: 20px 0;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .transcript-content {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #1f2937;
+  }
+  
+  .final-transcript {
+    color: #1f2937;
+    font-weight: 500;
+  }
+  
+  .interim-transcript {
+    color: #6b7280;
+    font-style: italic;
+  }
+  
+  .placeholder {
+    color: #9ca3af;
+    font-style: italic;
+  }
+  
+  .transcript-display::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .transcript-display::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 10px;
+  }
+  
+  /* Control Buttons */
+  .control-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  
+  .control-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .control-btn span:first-child {
+    font-size: 24px;
+  }
+  
+  .pause-btn {
+    background: #f59e0b;
+    color: white;
+  }
+  
+  .pause-btn:hover {
+    background: #d97706;
+    transform: translateY(-2px);
+  }
+  
+  .resume-btn {
+    background: #10b981;
+    color: white;
+  }
+  
+  .resume-btn:hover {
+    background: #059669;
+    transform: translateY(-2px);
+  }
+  
+  .clear-btn {
+    background: #6b7280;
+    color: white;
+  }
+  
+  .clear-btn:hover {
+    background: #4b5563;
+    transform: translateY(-2px);
+  }
+  
+  .stop-btn {
+    background: #ef4444;
+    color: white;
+  }
+  
+  .stop-btn:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+  }
+  
+  /* Tips */
+  .voice-tips {
+    margin-top: 16px;
+    padding: 12px;
+    background: #e0f2fe;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .voice-tips p {
+    margin: 0;
+    font-size: 13px;
+    color: #075985;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .control-buttons {
+      flex-wrap: wrap;
+    }
+    
+    .control-btn {
+      flex: 1 1 calc(50% - 6px);
+      font-size: 12px;
+    }
+    
+    .audio-waveform {
+      height: 60px;
+    }
+    
+    .transcript-display {
+      min-height: 100px;
+    }
+  }

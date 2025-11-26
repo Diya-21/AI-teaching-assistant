@@ -1,0 +1,36 @@
+# Core FastAPI
+fastapi==0.104.1
+uvicorn==0.24.0
+python-multipart==0.0.6
+
+# AI/ML
+google-generativeai==0.3.2
+
+# Document Processing
+PyPDF2==3.0.1
+python-docx==1.1.0
+
+# YouTube Integration
+youtube-search-python==1.6.6
+youtube-transcript-api==0.6.1
+
+# Environment
+python-dotenv==1.0.0
+
+# Data Processing
+pydantic==2.5.0
+
+# Optional: Voice Processing (if implementing server-side)
+# openai-whisper==20231117
+# google-cloud-speech==2.21.0
+
+# Optional: Image Processing (for future multimodal)
+# Pillow==10.1.0
+# opencv-python==4.8.1.78
+
+# Optional: Audio Processing
+# pydub==0.25.1
+
+# Development/Testing
+# pytest==7.4.3
+# httpx==0.25.2
